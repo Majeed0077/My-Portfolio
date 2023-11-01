@@ -1,0 +1,168 @@
+/* Define Variables */
+:root {
+  --box-shadow: 0px 0px 10px 0.51;
+  --primary-color: #0056b3;
+  --secondary-color: #17589d;
+  --hover-color: #fa2c11;
+}
+
+/* Circular Image Container */
+.circular-image-container {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* Circular Image */
+.circular-images {
+  width: 271px;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+/* Work Circle */
+.work-circle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
+
+.work-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.work-circle:hover {
+  transform: translateY(-5px);
+}
+
+/* Image Content */
+.image-content {
+  padding: 15px;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  border: 2px solid #fff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Title */
+.card-title {
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 4px;
+  width: 90%;
+  color: #000000;
+  margin: 8px 0;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card-title:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  color: #fff;
+}
+
+/* Card Text */
+.card-text {
+  border-radius: 25px 25px 25px 0;
+  padding: 5px;
+  background-color: rgb(221, 217, 217);
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(3, 0, 0, 0.245);
+}
+
+/* Show More Button */
+.semore-btn {
+  display: inline-block;
+  padding: 2px 4px;
+  position: relative;
+  background-color: var(--secondary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.semore-btn:hover {
+  background-color: var(--hover-color);
+  color: #fff;
+}
+
+.semore-btn::before {
+  content: "\25BA";
+  margin-right: 5px;
+}
+
+.semore-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #007bff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.semore-btn:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Title Overlay */
+.Work-title {
+  position: absolute;
+  top: 85%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    width: 90%;
+    font-size: 1rem;
+  }
+}
+
+/* Font Size for .Work-title */
+.Work-title {
+  font-size: 1.1rem;
+  margin: 0;
+  width: 110%;
+}

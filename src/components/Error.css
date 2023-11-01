@@ -1,0 +1,50 @@
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-color: #f8f8f8; /* A light background color */
+  }
+  
+  .error-content {
+    text-align: center;
+    padding: 30px;
+    background-color: #ffffff; /* A white background for the error content */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Box shadow for a card-like effect */
+  }
+  
+  .error-title {
+    font-size: 36px;
+    color: #ff6b6b; /* A highlight color, you can choose your brand color */
+  }
+  
+  .error-message {
+    font-size: 18px;
+    color: #333; /* Dark text color */
+    margin: 20px 0;
+  }
+  
+  .error-link {
+    font-size: 18px;
+    color: #007bff; /* A link color, use your brand color */
+    text-decoration: none;
+  }
+  
+  .error-link:hover {
+    text-decoration: underline;
+  }
+  .error-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Your brand's primary color */
+    color: #fff; /* White text color */
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .error-button:hover {
+    background-color: #034184; /* Slightly darker color on hover */
+  }

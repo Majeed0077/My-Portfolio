@@ -1,0 +1,98 @@
+:root {
+  --box-shadow: 0px 0px 10px rgba(224, 7, 11, 0.804);
+}
+
+/* Skill */
+.skill-bar {
+  margin: 0 auto 20px;
+  background-color: #f1eaea;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%; 
+  max-width: 400px;
+}
+
+/* See More Button */
+.btn-link {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+}
+
+/* Adjust the See More Button for responsiveness */
+@media (max-width: 768px) {
+  .btn-link {
+    position: relative; /* Reset position for smaller screens */
+    bottom: auto;
+    right: auto;
+    margin-top: 10px; /* Add some top margin for spacing */
+  }
+}
+
+.seemore-btn{
+  cursor: pointer;
+  color: blue; 
+}
+
+.seemore-btn {
+  color: red; 
+}
+
+.img-fluid.mt- {
+  box-shadow: var(--box-shadow);
+  max-width: 90%;
+  float: right;
+  border-radius: 10px;
+}
+
+.circle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+}
+
+.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blur-f-1{
+  bottom: 10;
+  right: 15%;
+  width: 26rem;
+  height: 12rem;
+  filter: blur(200px);
+  background: red;
+}
+
+/* Progress Bar */
+.progress-bar {
+  font-weight: bold;
+  background: linear-gradient(to bottom, #c34852, #d1943e);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.progress-bar:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.progress {
+  width: 200%; /* Set a fixed width of 100px */
+  height: 15px; /* Set an appropriate height */
+  margin: 0 auto; /* Center the progress bar horizontally */
+  background-color: rgb(189, 184, 175);
+}

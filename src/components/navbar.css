@@ -1,0 +1,128 @@
+.navbar {
+  background: linear-gradient(to right, #001eff, #121530);
+  background-size: cover;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px 0 10px 0;
+  margin-bottom: 20px;
+}
+
+.icon {
+  max-width: 100%;
+  height: auto;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+}
+.navbar-brand a {
+  text-decoration: none;
+}
+
+.navbar-brand:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background-color: #096aa6;
+  transition: width 0.5s ease;
+}
+
+.navbar-brand:hover:after {
+  width: 100%;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.nav-link {
+  color: #fffcfc;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease;
+  font-size: 16px;
+  border-radius: 20px;
+}
+
+.nav-link:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background-color: #064e7b;
+  transition: width 0.4s ease;
+}
+
+.nav-link:hover:after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #ffd904b3;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.navbar-dark .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler-icon {
+  background-image: url("./img/bars.svg");
+  color: #064e7b;
+  transition: width 0.5s ease-in-out;
+}
+
+.nav-link.active,
+.nav-link:focus {
+  color: rgb(193, 25, 25);
+  font-size: 20px;
+  transition: background 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+}
+
+
+
+/* Marquee */
+.scrolling-text-container {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  background-color: #efecea;
+  border-radius: 5%;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.scrolling-text {
+  display: inline-block;
+  animation: marquee 25s linear infinite;
+  width: 65%;
+  white-space: nowrap;
+  direction: rtl;
+  text-align: right;
+  font-weight: bolder;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-link {
+    font-size: 26px;
+    color: #dee60e;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    align-items: center;
+  }
+}
+
