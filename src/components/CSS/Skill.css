@@ -43,10 +43,8 @@
 }
 
 .img-fluid.mt- {
-  box-shadow: var(--box-shadow);
   max-width: 90%;
   float: right;
-  border-radius: 10px;
 }
 
 .circle {
@@ -95,4 +93,8 @@
   height: 15px; /* Set an appropriate height */
   margin: 0 auto; /* Center the progress bar horizontally */
   background-color: rgb(189, 184, 175);
+}
+
+.display-4{
+  font-size:"50rem"
 }

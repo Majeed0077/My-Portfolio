@@ -11,15 +11,19 @@ import gym from './img/gym.PNG';
 import Advice from './img/advice.png';
 import Restaurant from './img/restaurant.PNG'
 import Food from './img/foodcounter.PNG'
+import portfolio from './img/portfolio.PNG'
+import Shoe from './img/shoeshop.PNG'
 
 const projectData = [
     {
+        _id: "1",
         title: 'Blogging System',
         description:
             'My blogging system has two roles: admin and user. The admin can create, edit, and delete posts and users, while the user can only view posts. It\'s built with PHP, MySQL, HTML, CSS, and Bootstrap for easy navigation and scalability. It\'s a great platform for bloggers and website owners who want complete control over their content.',
         image: blog,
     },
     {
+        _id: "2",
         title: 'Text Manipulator',
         description:
             'Text manipulator created using JavaScript, React JS, HTML, CSS, and Bootstrap. The application allows users to manipulate text in various ways, such as converting to uppercase, lowercase, and camelcase, with a user-friendly interface.',
@@ -27,12 +31,30 @@ const projectData = [
         buttonLink: "https://transformhub.netlify.app/",
     },
     {
+        _id: "3",
         title: 'News Site',
         description:
             'News Site, a real-time news application created using JavaScript, React JS, CSS, HTML, Bootstrap, and APIs. The application provides access to the latest news and events, displaying my proficiency in creating dynamic and real-time news applications.',
         image: news,
     },
     {
+        _id: "4",
+        title: 'PortFolio Site',
+        description:
+            'I have crafted a stunning portfolio using the power of React.js, HTML, CSS, and added a touch of elegance with Framer Motion animations. Explore my work and experience a seamless web journey like never before',
+        image: portfolio,
+        buttonLink: "https://dumyportfolio.netlify.app/",
+    },
+    {
+        _id: "5",
+        title: 'Shoe Shopping',
+        description:
+            'Step into style with our ReactJS-powered Shoe Shopping site. Browse categories, pick your color, set your budget, and find the perfect pair effortlessly. Elevate your footwear game with ease and flair. Happy shopping!',
+        image: Shoe,
+        buttonLink: "https://shoeshopp.netlify.app/",
+    },
+    {
+        _id: "6",
         title: 'Food Counter',
         description:
             'Created a food-tracking app with React.js and Sass, simplifying meal logging, calorie monitoring, and healthy living. User-friendly interface, sleek design, dynamic interactivity, and responsive styling for a seamless experience.',
@@ -40,6 +62,7 @@ const projectData = [
         buttonLink: "https://food-counter.netlify.app/",
     },
     {
+        _id: "7",
         title: 'Gym Fit',
         description:
             'Still Working',
@@ -47,6 +70,7 @@ const projectData = [
         buttonLink: "https://gymforfitting.netlify.app/",
     },
     {
+        _id: "8",
         title: 'Qoute Generator',
         description:
             'Presenting a user-friendly web application built with React, Axios, and toast notifications. This app provides users with random pieces of advice retrieved from an external API. Users can fetch advice at the click of a button and easily copy the advice to their clipboard with just one more click. The user experience is enhanced with subtle toast notifications that confirm the successful copying of advice. Perfect for a quick dose of wisdom or inspiration.',
@@ -54,36 +78,42 @@ const projectData = [
         buttonLink: "https://rqoute.netlify.app/",
     },
     {
+        _id: "9",
         title: 'E-Commerce',
         description: "I've built a dynamic e-commerce site inspired by Amazon, using React.js, HTML, and CSS for the front-end. It boasts an attractive, responsive UI with product listings, a smooth cart, and a modern, interactive experience – a glimpse into online shopping excellence.",
         image: commerce,
         buttonLink: "https://amazoncommerce.netlify.app/", // I've corrected the URL to a valid one.
     },      
     {
+        _id: "10",
         title: 'Restaurant App',
         description: '"Introducing Restaurant App, a sleek and modern React.js and Tailwind CSS-powered restaurant app, seamlessly integrated with Firebase for real-time updates and secure authentication. This app is inspired by the finest YouTube channels, offering a dynamic menu, streamlined ordering, and a personalized user experience. Perfect for your portfolio showcase.',
         image: Restaurant,
         buttonLink: "https://apprestaurantt.netlify.app/",
     },
     {
+        _id: "11",
         title: 'Movies WebSite',
         description: '"Welcome to Maja Movies: Your go-to destination for all things cinema. Explore a vast movie library, create your watchlist, and enjoy high-quality streaming. Start your cinematic journey today!',
         image: maja,
         buttonLink: "https://majamovies.netlify.app/",
     },
     {
+        _id: "12",
         title: 'TicTacToe Game',
         description: '"Introducing a classic game with a modern twist! Experience the excitement of Tic Tac Toe, reimagined in this React-based game. Challenge your friends, customize player names, and enjoy hours of strategic fun. With real-time win and draw checks,',
         image: tictac,
         buttonLink: "https://tictacgamme.netlify.app/",
     },
     {
+        _id: "13",
         title: 'Memory Magic',
         description: 'Dive into Memory Magic, a React.js game where you match hidden cards, enjoying a sleek design with HTML and CSS. Unleash memory powers in this compact, enchanting web experience.',
         image: game,
         buttonLink: "https://magicgamme.netlify.app/",
     },
     {
+        _id: "14",
         title: 'Weather App',
         description:
             'This Weather app, built with Html, Bootstrap, JavaScript and API integration, provides real-time weather updates and forecasts for any country or city. With its user-friendly interface, users can easily access the weather information they need, making it a reliable tool for staying informed about weather conditions.',
@@ -97,6 +127,7 @@ const projectData = [
     //     buttonLink: "https://tii.la/python",
     // },
     {
+        _id: "15",
         title: 'Working',
         description: 'I am currently working on my personal projects.',
         image: code,

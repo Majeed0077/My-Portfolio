@@ -1,10 +1,13 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect, lazy, Suspense, 
+  useContext 
+} from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import gif from './components/img/loading.gif';
 import './App.css';
 import './loader.css';
-import { BrowserRouter as Router } from 'react-router-dom';
+import {themeContext} from './Context'
 
 const AnimaterRoutes = lazy(() => import('./components/AnimaterRoutes'));
 
@@ -18,15 +21,23 @@ function Loader() {
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+ 
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
 
   useEffect(() => {
-    // Simulating a delay to show the loader
     setTimeout(() => {
       setIsLoading(false);
     }, 1000);
   }, []);
 
   return (
+    <div 
+    style={{
+      background:darkMode? 'black' : '',
+      color: darkMode? 'white' : '',
+    }} 
+    >
     <Router>
       <Suspense fallback={<Loader />}>
         {isLoading ? (
@@ -40,6 +51,7 @@ function App() {
         )}
       </Suspense>
     </Router>
+    </div>
   );
 }
 

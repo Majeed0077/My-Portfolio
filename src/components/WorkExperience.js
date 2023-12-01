@@ -1,14 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import Prec from './img/prec.png';
-import Aptech from './img/aptech.png';
-import fiver from './img/fiver.png';
-import coding from './img/intern.jpg';
-import learning from './img/learning.png';
-import data from './img/data.png';
-import { motion, useAnimation } from 'framer-motion';
-import "./CSS/workexp.css"
+import React, { useEffect, useState, useContext } from "react";
+// import {Swiper, SwiperSlide} from 'swiper/react'
+import Prec from "./img/prec.png";
+import Aptech from "./img/aptech.png";
+import fiver from "./img/fiver.png";
+import coding from "./img/intern.jpg";
+import learning from "./img/learning.png";
+import data from "./img/data.png";
+import { motion, useAnimation } from "framer-motion";
+import { themeContext } from "../Context";
+import "swiper/css";
+import "./CSS/workexp.css";
 
 const ExperienceCard = ({ imgSrc, title, details }) => {
+  // Theme Context
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
+
   const controls = useAnimation();
   const [showFullDetails, setShowFullDetails] = useState(false);
   const toggleShowFullDetails = () => {
@@ -32,15 +39,15 @@ const ExperienceCard = ({ imgSrc, title, details }) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const workExperienceElement = document.getElementById('work-experience');
+      const workExperienceElement = document.getElementById("work-experience");
 
       if (workExperienceElement) {
         const elementOffsetTop = workExperienceElement.offsetTop;
 
         if (scrollY > elementOffsetTop - window.innerHeight / 1.5) {
-          controls.start('visible');
+          controls.start("visible");
         } else {
-          controls.start('hidden');
+          controls.start("hidden");
         }
       }
     };
@@ -55,10 +62,10 @@ const ExperienceCard = ({ imgSrc, title, details }) => {
 
     const debouncedScroll = debounce(handleScroll, 50);
 
-    window.addEventListener('scroll', debouncedScroll);
+    window.addEventListener("scroll", debouncedScroll);
 
     return () => {
-      window.removeEventListener('scroll', debouncedScroll);
+      window.removeEventListener("scroll", debouncedScroll);
     };
   }, [controls]);
 
@@ -72,43 +79,72 @@ const ExperienceCard = ({ imgSrc, title, details }) => {
       animate={controls}
       variants={variants}
     >
-      <div className="circular-image-container" style={{ position: 'relative' }}>
-        <img src={imgSrc} alt={title} className="circular-images" loading="lazy" />
+      <div className="circular-image-container">
+        <img
+          src={imgSrc}
+          alt={title}
+          className="circular-images"
+          loading="lazy"
+        />
         <div className="Work-title">
           <h5 className="title">{title}</h5>
         </div>
       </div>
       <motion.p
         style={{
-          marginTop: '10px',
-          textAlign: 'justify',
-          lineHeight: '1.2',
-          maxHeight: showFullDetails ? 'none' : '85px',
-          overflow: 'hidden',
-          transition: 'max-height 0.4s ease-in-out, opacity 0.4s ease-in-out',
+          marginTop: "10px",
+          textAlign: "justify",
+          lineHeight: "1.2",
+          maxHeight: showFullDetails ? "none" : "85px",
+          overflow: "hidden",
+          transition: "max-height 0.4s ease-in-out, opacity 0.4s ease-in-out",
         }}
       >
         <span className="card-text">{limitedDetails}</span>
       </motion.p>
       {details.length > 100 && (
-        <button className="btn see-more-btn" onClick={toggleShowFullDetails}>
-          {showFullDetails ? 'See Less' : 'See More'}
+        <button
+          className="btn see-more-btn"
+          onClick={toggleShowFullDetails}
+          style={{
+            background: darkMode ? "black" : "",
+            color: darkMode ? "white" : "",
+          }}
+        >
+          {showFullDetails ? "See Less" : "See More"}
         </button>
       )}
     </motion.div>
   );
 };
 
-
 const WorkExperience = () => {
+  // Theme Context
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
   return (
-    <motion.div className="container">
+    <motion.div
+      className="container"
+      style={{
+        background: darkMode ? "black" : "",
+        color: darkMode ? "white" : "",
+      }}
+    >
       <div className="row">
         <div className="col-12 text-center">
-          <h3 className='shadow rounded-bottom-3 mb-4'> <b>My Work & Experience</b> <i className="fas fa-briefcase"></i></h3>
+          <h3
+            className="shadow rounded-bottom-3 mb-4"
+            style={{
+              border: darkMode ? "1px solid orange" : "",
+              background: darkMode ? "" : "",
+            }}
+          >
+            {" "}
+            <b>My Work & Experience</b> <i className="fas fa-briefcase"></i>
+          </h3>
         </div>
       </div>
-      <div className="row  mt-4" id='work-experience'>
+      <div className="row  mt-4" id="work-experience">
         <ExperienceCard
           imgSrc={Prec}
           title="Precise Technology"
@@ -121,7 +157,7 @@ const WorkExperience = () => {
         />
         <ExperienceCard
           imgSrc={fiver}
-          title="Front-End Developer on Fiverr"
+          title="Front-End Developer"
           details="I spent three months working as a Front-End Developer on Fiverr, where I used my skills in web development to create visually appealing and user-friendly websites for various clients. Working on Fiverr allowed me to gain valuable experience in a dynamic and fast-paced freelance environment."
         />
         <ExperienceCard

@@ -1,9 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import edu from './img/education.jpg';
 import { motion, useAnimation } from 'framer-motion';
+import { themeContext } from '../Context';
+
 
 
 const EducationalBackground = () => {
+  // Theme Context
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
+
   const controls = useAnimation();
   const [isVisible, setIsVisible] = useState(false);
 
@@ -58,10 +64,10 @@ const EducationalBackground = () => {
     },
   };
   return (
-    <div className="container">
+    <div className="container" style={{background:darkMode ? 'black' : '', color: darkMode ? 'white' : '' }}>
       <div className="row">
-        <div className="col-12 text-center shadow">
-          <h3>
+        <div className="col-12 text-center shadow rounded-bottom-3">
+          <h3  style= {{border:darkMode? '1px solid orange' : '', color: darkMode ? 'orange' : ''}}>
             <b>Educational Background</b> <i className="fas fa-graduation-cap"></i>
           </h3>
         </div>

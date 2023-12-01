@@ -1,10 +1,16 @@
-import React from 'react'
-import './CSS/footer.css';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
+import React, { useState } from "react";
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
+  // eslint-disable-next-line
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <footer className='container-fluid bg-light footer'>
+    <footer className={`container-fluid footer ${darkMode ? 'dark' : ''}`}>
       <div className="row social-links justify-content-center">
         <div className="col-auto">
           <a href="https://www.facebook.com/MajeedAbro" target="_blank" rel="noopener noreferrer"><FaFacebook className='mx-1' /></a>
@@ -26,8 +32,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+  );
+};
 
-  )
-}
-
-export default Footer
+export default Footer;

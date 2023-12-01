@@ -6,12 +6,12 @@
   .project-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end; /* Align buttons to the right */
+    justify-content: flex-end;
   }
 
   .text-muted {
     flex: 1;
-    margin-right: 10px; /* Add spacing between descriptions and buttons */
+    margin-right: 10px;
   }
 }
 
@@ -20,9 +20,9 @@
   padding: 5px 10px;
   background: linear-gradient(to left, #ff6b6b, #ffa726);
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 0.7rem;
   font-weight: bold;
-  text-align: center;
+  text-align: right;
   text-decoration: none;
   border-radius: 20px 20px 0 20px;
   transition: background 0.3s ease, transform 0.2s ease;
@@ -31,12 +31,10 @@
   right: 0;
 }
 
-/* position: 'absolute', bottom: '0', right: '0' */
 
 .custom-button:hover {
-  background: linear-gradient(to right, #ff6b6b, #ffa726);
+  background: linear-gradient(to right, #2b0000, #a16100);
   transform: scale(1.05);
-  font-size: 1.5rem;
 }
 
 .seemore-btn {
@@ -79,12 +77,10 @@
   transform-origin: left;
 }
 .img-fluid.mt-4 {
-  box-shadow: var(--box-shadow);
-  max-width: 100%;
+  max-width: 90%;
   float: right;
-  border-radius: 35px 35px 0 35px;
-
   cursor: pointer;
+  margin-top: -50rem;
 }
 .circular-image-container {
   display: flex;
@@ -92,7 +88,7 @@
   align-items: center;
   overflow: hidden;
   width: fit-content;
-  height: 140px;
+  height: 105px;
   box-shadow: var(--box-shadow);
   margin: 0 auto;
   border-radius: 25px 25px 0 25px;
@@ -106,7 +102,7 @@
   height: 140px;
 }
 h5 {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   width: fit-content;
   margin-left: 45px;
   margin-top: 10px;
@@ -133,17 +129,17 @@ h5 {
 
 @media screen and (max-width: 650px) {
   h5 {
-    font-size: 0.4rem; /* Adjust font size for smaller screens */
-    width: auto; /* Allow width to be determined by content */
-    margin-left: 20px; /* Adjust margins as needed */
-    margin-top: 2px; /* Adjust margins as needed */
+    font-size: 0.4rem;
+    width: auto;
+    margin-left: 20px; 
+    margin-top: 2px; 
     left:0;
   }
 
   .title-overlay {
-    width: 60%; /* Make it full width on smaller screens */
-    margin-left: 0; /* Remove margin-left on smaller screens */
-    text-align: center; /* Center the text on smaller screens */
+    width: 60%; 
+    margin-left: 0; 
+    text-align: center;
     top: 90%;
     left: 27%;
 

@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import skills from './img/skill.gif';
+import React, { useState, useContext } from 'react';
+import skills from './img/skill.png';
 import skillData from './skillData';
 import { motion } from 'framer-motion'
 import "./CSS/Skill.css"
+import { themeContext } from '../Context';
 
 // Error boundary component
 // eslint-disable-next-line
 class ErrorBoundary extends React.Component {
+  
   constructor(props) {
     super(props);
     this.state = { hasError: false };
@@ -28,6 +30,10 @@ class ErrorBoundary extends React.Component {
 }
 
 const Skills = () => {
+    // Theme Context
+    const theme = useContext(themeContext);
+    const darkMode = theme.state.darkMode;
+
   // Initialize showFullDescriptions state as an array to manage each skill's description
   const [showFullDescriptions, setShowFullDescriptions] = useState(Array(skillData.length).fill(false));
 
@@ -42,9 +48,10 @@ const Skills = () => {
 
   return (
     <motion.div
-      initial={{ width: 0, opacity: 0 }} animate={{ width: "100%", opacity: 1 }} exit={{ x: window.innerWidth, transition: { duration: 0.3, ease: "easeInOut" } }}
+      initial={{ width: 0, opacity: 0 }} animate={{ width: "100%", opacity: 1 }} exit={{ x: window.innerWidth, transition: { duration: 0.3, ease: "easeInOut" }}}
+      
     >
-      <div className="container">
+      <div className="container" style={{background:darkMode ? 'black' : '', color: darkMode ? 'white' : '' }}>
         <div className="row align-items-center">
           <div className="col-md-6 col-sm-12 d-flex justify-content-center">
             <img src={skills} className="img-fluid mt-" style={{ maxWidth: "100%", float: "right", maxHeight: "300px" }} alt="Software Development" />
@@ -66,9 +73,11 @@ const Skills = () => {
         </div>
       </div>
       <br />
-      <div className="container">
+      <div className="container" style={{background:darkMode ? 'black' : '', color: darkMode ? 'white' : '' }}>
         <div className="row">
-          <div className="col-12 text-center mb-3"> <h1 className="display-4">My Skills<i className="fa-solid fa-laptop-code"></i></h1> </div>
+          <div className="col-12 text-center mb-3"> 
+          <h1 className="display-4" style={{fontSize:"2rem", border: darkMode? '1px solid orange' : ''}}>My Skills<i className="fa-solid fa-laptop-code"></i></h1> 
+          </div>
         </div>
         <div className="row">
           {skillData.map((skill, index) => (
@@ -86,7 +95,7 @@ const Skills = () => {
                     : `${skill.description.substring(0, 120)}..`
                   }
                   {skill.description.length > 20 && (
-                    <button className="btn seemore-btn" onClick={() => toggleShowFullDescriptions(index)}>{showFullDescriptions[index] ? 'See Less' : 'See More'}</button>
+                    <button className="btn seemore-btn" onClick={() => toggleShowFullDescriptions(index)}  style={{background:darkMode ? 'gray' : '', color: darkMode ? 'white' : '' }}>{showFullDescriptions[index] ? 'See Less' : 'See More'}</button>
                   )}
                 </p>
               </div>
